@@ -1,4 +1,4 @@
-const UserModel = require("../model/user.model");
+const UserModel = require("../models/user.model");
 
 class UserService {
   constructor() {
@@ -26,7 +26,7 @@ class UserService {
       await this.userModel.save(userNew);
 
       return "User berhasil di simpan!"
-   } catch (error) {
+    } catch (error) {
       throw error;
     }
   }
@@ -43,8 +43,8 @@ class UserService {
     if (!user) {
       throw new Error("User tidak ditemukan")
       // 2 check password, kalau sama sukses kalau beda trow error password tidak sesuai
-    } else if (password!=user.password){
-      throw new Error ("Password salah !!")
+    } else if (password != user.password) {
+      throw new Error("Password salah !!")
     }
     // 3 kasih message berhasil login ketika email dan password berhasil. 
     return ("Anda berhasil log-in")
